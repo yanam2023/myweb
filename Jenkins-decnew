@@ -20,7 +20,7 @@ pipeline{
             steps{
                 sshagent(['tomcat-new']) {
                 sh """
-                       ec2-user@172.31.40.154:/home/ec2-user/apache-tomcat-9.0.54/webapps/
+                      ec2-user@172.31.40.154:/home/ec2-user/apache-tomcat-9.0.54/webapps/
                     
                     ssh ec2-user@172.31.40.154 /home/ec2-user/apache-tomcat-9.0.54/bin/shutdown.sh
                     
