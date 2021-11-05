@@ -7,6 +7,13 @@ pipeline {
                   git credentialsId: '3291f47c-5dc3-457e-9df5-5f35e63fb461', url: 'https://github.com/RAJANI9/myweb.git'
                   }
             }
+            
+            stage("build"){
+                  step{
+                       sh "mvn clean package"
+                       sh "mv target/*.war target/myweb.war"
+                       
+                
             }
           
             
