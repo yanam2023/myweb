@@ -1,0 +1,61 @@
+jenkins
+
+
+Step1. Create the YumRepo File.
+
+vim /etc/yum.repos.d/epelfordaemonize.repo
+
+[daemonize]
+baseurl=https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/
+gpgcheck=no
+enabled=yes
+
+
+ yum install daemonize -
+
+________________________________________________
+   /var/lib/jenkins/workspace
+   /var/lib/jenkins/job
+______________________________________________________________
+        yum install -y java-1.8.0-openjdk-devel.x86_64
+        yum install -y git
+
+
+
+ sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+ sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+ sudo yum upgrade
+ sudo yum install epel-release java-11-openjdk-devel
+ sudo yum install jenkins
+ sudo systemctl daemon-reload
+ sudo systemctl start jenkins
+
+
+
+
+       sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+    7  sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+    8  yum install -y jenkins
+
+
+    9  service jenkins start
+
+   10  cat /var/lib/jenkins/secrets/initialAdminPassword
+
+   11  cd /var/lib/jenkins/
+   12  ls
+   13  cd workspace/
+   14  ls
+   15  history
+
+____________________________________________________________
+
+maven
+
+
+  sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+  sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+     sudo yum install -y apache-maven
+_________________________________________________________________
