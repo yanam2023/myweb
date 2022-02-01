@@ -1,0 +1,10 @@
+pipeline {
+      agent any
+      
+      stages{
+            stage("SCMcheckout"){
+            steps{
+                  git credentialsId: '288ed8a9-f81c-4b30-adfa-5432392201e9', url: 'https://github.com/RAJANI9/myweb.git'
+                  }
+            }
+            
