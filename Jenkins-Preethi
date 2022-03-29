@@ -4,20 +4,8 @@ pipeline {
       stages{
             stage("SCMcheckout"){
             steps{
-                  git credentialsId: '288ed8a9-f81c-4b30-adfa-5432392201e9', url: 'https://github.com/RAJANI9/myweb.git'
+                  git credentialsId: 'd539e673-b9a1-4110-a761-14744c1ffdeb', url: 'https://github.com/RAJANI9/myweb.git'
                   }
-            }
-            
-            stage("build"){
-                  steps{
-                       sh "mvn clean package"
-                       sh "mv target/*.war target/myweb.war"
-                       }
-                       }
-                       stage("depoly"){
-                  steps{
-                       deploy adapters: [tomcat9(credentialsId: '7d0169a2-aed1-4cbb-b259-95f536c603ee', path: '', url: 'http://3.6.86.20:8080/')], contextPath: 'myweb', war: 'target/*.war'
-                       }
-            }
-       }
-       }
+                  }
+                  
+    
