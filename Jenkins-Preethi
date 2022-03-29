@@ -5,7 +5,10 @@ pipeline {
             stage("SCMcheckout"){
             steps{
                   git credentialsId: 'd539e673-b9a1-4110-a761-14744c1ffdeb', url: 'https://github.com/RAJANI9/myweb.git'
+        
+     
                   }
-                  }
-                  
+            }
+      }
+   }   
     
