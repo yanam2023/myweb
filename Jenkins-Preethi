@@ -15,7 +15,13 @@ pipeline {
                        sh "mvn clean package"
                        sh "mv target/*.war target/myweb.war"
                        }
-                   }    
+                   }  
+                   
+            stage("depoly"){
+                  steps{
+                       deploy adapters: [tomcat9(credentialsId: 'a4319e13-d2fd-4414-9a07-797df225f39d', path: '', url: 'http://13.232.1.81:8080/')], contextPath: 'myweb', war: 'target/*.war'
+                       } 
+                 }      
       }
    }   
     
