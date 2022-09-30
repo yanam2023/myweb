@@ -39,6 +39,13 @@
 		    <url>http://65.2.39.160:8081/repository/sample-relases/</url>
 		</repository>
   	</distributionManagement>
+	<plugins>
+	   <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+           </plugin>
+	</plugins>
 	
 	<pluginRepositories>
 	    <pluginRepository>    
